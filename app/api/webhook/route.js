@@ -4,11 +4,6 @@ import { mongooseConnect } from '@/app/lib/mongoose';
 const stripe = require('stripe')(process.env.STRIPE_SK);
 import { Order } from '@/app/models/Order';
 
-export const config = {
-    api: { bodyParser: false, }
-}
-
-
 export async function POST(req, res) {
 
     await mongooseConnect();
