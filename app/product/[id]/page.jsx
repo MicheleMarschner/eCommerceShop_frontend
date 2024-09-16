@@ -6,7 +6,6 @@ import { useParams } from 'next/navigation'
 import Center from '@/app/styles/Center'
 import Header from '@/app/components/Header'
 import styled from 'styled-components'
-
 import axios from 'axios';
 import ProductImages from '@/app/components/ProductImages';
 import Button from '@/app/styles/Button';

@@ -5,7 +5,6 @@ import Center from '../styles/Center'
 import styled from 'styled-components'
 import ButtonLink from '../styles/ButtonLink'
 import CartIcon from './icons/CartIcon';
-
 import axios from 'axios';
 import { CartContext } from './CartContext';
 

@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import Center from '../styles/Center';
 import Button from '../styles/Button';
 import { CartContext } from '../components/CartContext';
-
 import axios from 'axios';
 import Table from '../components/Table';
 import Input from '../components/Input';
