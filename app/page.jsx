@@ -1,0 +1,29 @@
+// mark as client component
+"use client";
+import { useEffect, useState } from 'react'
+import Header from "./components/Header";
+import Featured from "./components/Featured";
+import axios from 'axios';
+import NewProducts from './components/NewProducts';
+ 
+export default function Home() {
+
+  const [ products, setProducts ] = useState([])
+
+  useEffect(() => {
+    axios.get('/api/products', 
+        { next: { revalidate: 1*360*24}}
+      )
+      .then(res => setProducts(res.data));
+  }, [])
+
+
+
+  return (
+    <main>
+      <Header />
+      <Featured />
+      <NewProducts />
+    </main>
+  );
+}
