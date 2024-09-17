@@ -37,15 +37,15 @@ export async function POST(req, res) {
     let orderId = '';
     let paid = false;
 
-    
-    data = event.data.object;
-    orderId = data.metadata.orderId;
-    paid = data.payment_status === 'paid';
+    // Unexpected event type
+            data = event.data.object;
+            orderId = data.metadata.orderId;
+            
 
-    if (orderId && paid) {
-        await Order.findByIdAndUpdate(orderId, {paid: true})
-    }
 
+                await Order.findByIdAndUpdate(orderId, {paid: true})
+           
+                return NextResponse.json(event.type);
     // Handle the event
     switch (event.type) {
         case 'payment_intent.succeeded':
