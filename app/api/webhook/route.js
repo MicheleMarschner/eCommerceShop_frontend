@@ -37,7 +37,14 @@ export async function POST(req, res) {
     let orderId = '';
     let paid = false;
 
-    console.log("eventType: ", event.type)
+    
+    data = event.data.object;
+    orderId = data.metadata.orderId;
+    paid = data.payment_status === 'paid';
+
+    if (orderId && paid) {
+        await Order.findByIdAndUpdate(orderId, {paid: true})
+    }
 
     // Handle the event
     switch (event.type) {
@@ -75,16 +82,9 @@ export async function POST(req, res) {
             break;
             
         default:
-            // Unexpected event type
-            data = event.data.object;
-            orderId = data.metadata.orderId;
-            paid = data.payment_status === 'paid';
-
-            if (orderId && paid) {
-                await Order.findByIdAndUpdate(orderId, {paid: true})
-            } else {
-                console.log(`Unhandled event type ${event.type}.`);
-            }
+            
+            console.log(`Unhandled event type ${event.type}.`);
+            
 
             break;
     }
