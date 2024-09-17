@@ -45,7 +45,7 @@ export async function POST(req, res) {
 
                 await Order.findByIdAndUpdate(orderId, {paid: true})
            
-                return NextResponse.json(event.type);
+                return NextResponse.json({message: event.type}, {status: 450});
     // Handle the event
     switch (event.type) {
         case 'payment_intent.succeeded':
