@@ -41,6 +41,17 @@ export async function POST(req, res) {
 
     // Handle the event
     switch (event.type) {
+        case 'payment_intent.succeeded':
+            data = event.data.object;
+            orderId = data.metadata.orderId;
+            paid = data.payment_status === 'paid';
+
+            if (orderId && paid) {
+                await Order.findByIdAndUpdate(orderId, {paid: true})
+            }
+
+            break;
+
         case 'checkout.session.completed':
             data = event.data.object;
             orderId = data.metadata.orderId;
@@ -64,8 +75,18 @@ export async function POST(req, res) {
             break;
             
         default:
-        // Unexpected event type
-            console.log(`Unhandled event type ${event.type}.`);
+            // Unexpected event type
+            data = event.data.object;
+            orderId = data.metadata.orderId;
+            paid = data.payment_status === 'paid';
+
+            if (orderId && paid) {
+                await Order.findByIdAndUpdate(orderId, {paid: true})
+            } else {
+                console.log(`Unhandled event type ${event.type}.`);
+            }
+
+            break;
     }
     
     return NextResponse.json(200);
