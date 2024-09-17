@@ -37,6 +37,8 @@ export async function POST(req, res) {
     let orderId = '';
     let paid = false;
 
+    console.log("eventType: ", event.type)
+
     // Handle the event
     switch (event.type) {
         case 'checkout.session.completed':
