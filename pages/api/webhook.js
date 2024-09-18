@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         endpointSecret   // Webhook secret
       );
     } catch (err) {
-      console.error('⚠️  Webhook signature verification failed:', err.message);
+      console.error('⚠️  Webhook signature verification failed:', {"sig": sig, "request": req});
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
