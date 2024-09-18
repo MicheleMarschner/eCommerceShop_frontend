@@ -50,7 +50,7 @@ export async function POST(req, res) {
 
             break;
 
-        case 'charge.updated':
+        /*case 'charge.updated':
             data = event.data.object;
             orderId = data.metadata.orderId;
             paid = data.payment_status === 'paid';
@@ -60,7 +60,7 @@ export async function POST(req, res) {
             }
 
             break;
-            
+        */    
         default:
         // Unexpected event type
             console.log(`Unhandled event type ${event.type}.`);
