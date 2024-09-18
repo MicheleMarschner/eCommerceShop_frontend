@@ -40,7 +40,7 @@ export async function POST(req, res) {
     // Handle the event
     switch (event.type) {
         case 'checkout.session.completed':
-            //data = event.data.object;
+            data = event.data.object;
             orderId = object.metadata.orderId;
             paid = object.payment_status === 'paid';
 
