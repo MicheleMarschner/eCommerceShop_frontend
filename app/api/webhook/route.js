@@ -28,7 +28,8 @@ export async function POST(req, res) {
             endpointSecret
         );
         } catch (err) {
-            console.log(`⚠️  Webhook signature verification failed.`, err.message);
+            console.log(`⚠️  Webhook signature verification failed.`, sig);
+            //console.log(`⚠️  Webhook signature verification failed.`, err.message);
             return NextResponse.json(400);
         }
     }
