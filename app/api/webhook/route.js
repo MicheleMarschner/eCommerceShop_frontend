@@ -40,9 +40,9 @@ export async function POST(req, res) {
     // Handle the event
     switch (event.type) {
         case 'checkout.session.completed':
-            data = event.data.object;
-            orderId = data.metadata.orderId;
-            paid = data.payment_status === 'paid';
+            //data = event.data.object;
+            orderId = object.metadata.orderId;
+            paid = object.payment_status === 'paid';
 
             if (orderId && paid) {
                 await Order.findByIdAndUpdate(orderId, {paid: true})
