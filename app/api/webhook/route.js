@@ -7,13 +7,13 @@ import { Order } from '@/app/models/Order';
 export async function POST(req, res) {
 
     await mongooseConnect();
-    let sig;
+    let sig = req.headers["stripe-signature"];
 
-    for (let [key, value] of req.headers.entries()) {
+    /*for (let [key, value] of req.headers.entries()) {
         if (key.toLowerCase() === 'stripe-signature') {
             sig = value;
         }
-    }
+    }*/
 
     let event;
     const body = await req.text()
@@ -28,7 +28,7 @@ export async function POST(req, res) {
             endpointSecret
         );
         } catch (err) {
-            console.log(`⚠️  Webhook signature verification failed.`, sig);
+            console.log(`⚠️  Webhook signature verification failed.`, req.headers["stripe-signature"]);
             //console.log(`⚠️  Webhook signature verification failed.`, err.message);
             return NextResponse.json(400);
         }
