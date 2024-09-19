@@ -75,7 +75,7 @@ function Featured() {
 
   useEffect(() => {
 
-    const id = "66cada4a48a3b470b433f65c"
+    const id = "66ec271f96f7bcda901cae5a"
 
     axios.get('/api/products?id='+id, 
         { next: { revalidate: 1*360*24}}
@@ -95,7 +95,7 @@ function Featured() {
             <ColumnsWrapper>
                 <Column>
                     {featuredProduct?.images?.length > 0 &&
-                        <img src={featuredProduct.images[0]} />}
+                        <img src="./MacBook_pic.png" />}
                 </Column>
                 <Column>
                     <div>
