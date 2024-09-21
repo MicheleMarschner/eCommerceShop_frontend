@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Suspense} from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header';
 import Center from '../styles/Center';
@@ -8,6 +8,7 @@ import ProductsGrid from '../components/ProductsGrid';
 import axios from 'axios';
 import { useSearchParams, useRouter } from 'next/navigation';
 import StyledButton from '../styles/Button';
+import Loader from '../components/Loader';
 
 const Title = styled.h1`
     font-size: 1.5rem;
@@ -43,6 +44,8 @@ function ProductsPage() {
       <Header />
       <Center>
         <Title>Products</Title>
+        <Suspense fallback={<Loader />}>
+        
         <FilterRow>
           <StyledButton 
             $outline $black 
@@ -54,6 +57,7 @@ function ProductsPage() {
           </StyledButton>
         </FilterRow>
         <ProductsGrid products={products}/>
+        </Suspense>
       </Center>
     </>
   )
