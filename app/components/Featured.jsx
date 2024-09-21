@@ -7,10 +7,11 @@ import ButtonLink from '../styles/ButtonLink'
 import CartIcon from './icons/CartIcon';
 import axios from 'axios';
 import { CartContext } from './CartContext';
+import { base } from '../lib/styles';
 
 
 const Bg = styled.div`
-    background-color: #222;
+    background-color: ${base};
     color: #fff;
     padding: 3.1rem 0;
 `
@@ -75,14 +76,10 @@ function Featured() {
 
   useEffect(() => {
 
-    const id = "66ec271f96f7bcda901cae5a"
-
-    axios.get('/api/products?id='+id, 
+    axios.get('/api/products', 
         { next: { revalidate: 1*360*24}}
       )
-      .then(res => {
-        console.log(res.data)
-        setFeaturedProduct(res.data)});
+      .then(res => setFeaturedProduct(res.data[0]));
   }, [])
 
   const addProductToCart = () => {
@@ -95,7 +92,7 @@ function Featured() {
             <ColumnsWrapper>
                 <Column>
                     {featuredProduct?.images?.length > 0 &&
-                        <img src="./MacBook_pic.png" />}
+                        <img src={featuredProduct.images[0]} />}
                 </Column>
                 <Column>
                     <div>

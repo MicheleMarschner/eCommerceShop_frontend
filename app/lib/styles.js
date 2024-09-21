@@ -1,7 +1,9 @@
 import { Roboto, Poppins } from 'next/font/google'
 
 //colors
-export const primary = '#5542f6'
+export const primary = '#45A29F'
+export const base = '#222'
+
 
 // fonts
 export const roboto = Roboto({

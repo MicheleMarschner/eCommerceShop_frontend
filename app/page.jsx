@@ -5,7 +5,8 @@ import Header from "./components/Header";
 import Featured from "./components/Featured";
 import axios from 'axios';
 import NewProducts from './components/NewProducts';
- 
+import Categories from './components/Categories';
+
 export default function Home() {
 
   const [ products, setProducts ] = useState([])
@@ -24,6 +25,7 @@ export default function Home() {
       <Header />
       <Featured />
       <NewProducts />
+      <Categories />
     </main>
   );
 }

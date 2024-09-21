@@ -36,6 +36,12 @@ export const ButtonStyle = css`
     background-color: #000;
     color: #fff;
   `}
+  ${props => props.$black && props.$outline && css`
+    font-weight: 600;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+  `}
   ${props => props.$primary && !props.$outline && css`
       font-weight: 600;
       background-color: ${primary};
@@ -53,7 +59,14 @@ export const ButtonStyle = css`
       svg {
         height: 1.2rem;
       }
-    `}
+  `}
+  ${props => props.$disabled && css`
+    font-weight: 600;
+    background-color: transparent;
+    color: #c8c8c8;
+    border: 1px solid #c8c8c8;
+    cursor: default;
+  `}
 `
 
 const StyledButton = styled.button`

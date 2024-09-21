@@ -7,9 +7,10 @@ import styled from 'styled-components'
 import Center from '../styles/Center'
 import { CartContext } from './CartContext'
 import BarsIcon from './icons/BarsIcon';
+import { base } from '../lib/styles';
 
 const StyledHeader = styled.header`
-    background-color: #222;
+    background-color: ${base};
     padding: 
 `
 
@@ -41,7 +42,7 @@ const StyledNav = styled.nav`
     bottom: 0;
     right: 0;
     padding: 70px 20px 20px;
-    background-color: #222;
+    background-color: ${base};
 
     @media screen and (min-width: 768px) {
         display: flex;
@@ -87,7 +88,7 @@ function Header() {
                 <Logo href={'/'}>Ecommerce</Logo>
                 <StyledNav mobileNavActive={mobileNavActive}>
                     <NavLink href={'/'}>Home</NavLink>
-                    <NavLink href={'/products'}>All products</NavLink>
+                    <NavLink href={'/products'}>Products</NavLink>
                     <NavLink href={'/categories'}>Categories</NavLink>
                     <NavLink href={'/account'}>Account</NavLink>
                     <NavLink href={'/cart'}>Cart ({cartProducts.length})</NavLink>

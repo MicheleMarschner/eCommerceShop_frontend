@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { CartContext } from './CartContext'
 
 const ProductWrapper = styled.div`
-
+    padding: 2.4rem;
 `
 
 const WhiteBox = styled(Link)`
@@ -13,9 +13,13 @@ const WhiteBox = styled(Link)`
     padding: 1rem;
     height: 9rem;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
     img {
         max-width: 100%;
         max-height: 5rem;
@@ -43,7 +47,7 @@ const PriceRow = styled.div`
 
     @media screen and (min-width: 768px) {
         display: flex;
-        gap: 100px;
+        gap: 10px;
     }
 `
 
