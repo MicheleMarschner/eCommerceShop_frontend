@@ -1,14 +1,12 @@
 "use client";
 
-import React, {useState, useEffect, Suspense} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header';
 import Center from '../styles/Center';
 import ProductsGrid from '../components/ProductsGrid';
-import axios from 'axios';
 import { useSearchParams, useRouter } from 'next/navigation';
 import StyledButton from '../styles/Button';
-import Loader from '../components/Loader';
 
 const Title = styled.h1`
     font-size: 1.5rem;
@@ -22,23 +20,10 @@ const FilterRow = styled.div`
 `
 
 function ProductsPage() {
-  let category;
-
-  
-    const searchParams = useSearchParams();
-    category = searchParams.get('category');
-
-  
-  
-  
+ 
+  const searchParams = useSearchParams();
+  let category = searchParams.get('category');
   const router = useRouter();
-
- /* useEffect(() => {
-    axios.get(`/api/products?category=${category}`, 
-      { next: { revalidate: 1*360*24}}
-    )
-    .then(res => setProducts(res.data));
-  }, [category])*/
 
   const goBack = () => {
     router.push('/products')
@@ -46,12 +31,9 @@ function ProductsPage() {
 
   return (
     <>
-      
-      
       <Header />
       <Center>
         <Title>Products</Title>
-        
         <FilterRow>
           <StyledButton 
             $outline $black 
@@ -62,9 +44,7 @@ function ProductsPage() {
             Reset Filter
           </StyledButton>
         </FilterRow>
-        <Suspense fallback={<div>Loading</div>}>
-          <ProductsGrid category={category}/>
-        </Suspense>
+        <ProductsGrid category={category}/>
       </Center>
     </>
   )

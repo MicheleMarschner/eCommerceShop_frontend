@@ -24,10 +24,7 @@ export default function Home() {
     <main>
       <Header />
       <Featured />
-      
       <NewProducts />
-      
-      
       <Categories />
       
     </main>
