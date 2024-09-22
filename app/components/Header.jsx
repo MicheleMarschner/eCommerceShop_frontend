@@ -18,7 +18,7 @@ const Logo = styled(Link)`
     color: #fff;
     text-decoration: none;
     position: relative;
-    z-index: 3;
+    z-index: 10002;
 `
 
 const Wrapper = styled.div`
@@ -43,8 +43,9 @@ const StyledNav = styled.nav`
     right: 0;
     padding: 70px 20px 20px;
     background-color: ${base};
+    z-index: 10001;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         display: flex;
         position: static;
         padding: 0;
@@ -57,7 +58,7 @@ const NavLink = styled(Link)`
     text-decoration: none;
     padding: 10px 0;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         padding: 0;
     }
 `
@@ -70,9 +71,9 @@ const NavButton = styled.button`
     border: 0;
     cursor: pointer;
     position: relative;
-    z-index: 3;
+    z-index: 10002;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         display: none;
     }
 `;

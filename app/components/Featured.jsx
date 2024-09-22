@@ -21,7 +21,7 @@ const Title = styled.h1`
     font-weigth: normal;
     font-size: 1.5rem;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         font-size: 2.6rem;
     }
 `
@@ -37,12 +37,20 @@ const ColumnsWrapper = styled.div`
     gap: 2.8rem;
     padding-bottom: 1.5rem;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         grid-template-columns: 1.1fr .9fr;
         
         div:nth-child(1) {
             order: 2;
         }
+    }
+
+    @media (min-width: 1023px) { 
+        margin: 0 4rem;
+    }
+
+    @media (min-width: 1800px) { 
+        margin: 0 12rem;
     }
 `
 
@@ -63,7 +71,7 @@ const Column = styled.div`
         margin: 0 auto;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         img {
             height: 100%;
         }

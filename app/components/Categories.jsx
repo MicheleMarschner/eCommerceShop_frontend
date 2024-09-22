@@ -1,10 +1,12 @@
+"use client";
+
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Center from '../styles/Center';
 import styled from 'styled-components'
 import Slider from './Slider';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+
 
 const Title = styled.h2`
   font-size: 2rem;
@@ -42,17 +44,14 @@ const CategoryTitle = styled.div`
 
 
 const Categories = () => {
-  const router = useRouter(); 
+  
   const [ categories, setCategories ] = useState([])
 
   useEffect(() => {
     axios.get('/api/categories/', 
         { next: { revalidate: 1*360*24}}
       )
-      .then(res => {
-        setCategories(res.data)
-        console.log("data", res.data)    
-    });
+      .then(res => setCategories(res.data));
   }, [])
   
   return (

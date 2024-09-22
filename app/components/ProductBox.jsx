@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { CartContext } from './CartContext'
 
 const ProductWrapper = styled.div`
-    padding: 2.4rem;
+    padding: 3rem;
 `
 
 const WhiteBox = styled(Link)`
@@ -23,7 +23,7 @@ const WhiteBox = styled(Link)`
     img {
         max-width: 100%;
         max-height: 5rem;
-    }
+    } 
 `
 
 const Title = styled(Link)`
@@ -45,9 +45,9 @@ const PriceRow = styled.div`
     justify-content: space-between;
     margin-top: 2px;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         display: flex;
-        gap: 10px;
+        gap: 2rem;
     }
 `
 
@@ -56,7 +56,7 @@ const Price = styled.div`
     font-weight: 400;
     text-align: right;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         font-size: 1.3rem;
         font-weight: 600;
         text-align: left;

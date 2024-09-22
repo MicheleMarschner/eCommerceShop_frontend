@@ -67,6 +67,10 @@ export const ButtonStyle = css`
     border: 1px solid #c8c8c8;
     cursor: default;
   `}
+
+  @media (min-width: 768px) {
+      max-width: 200px;
+  }
 `
 
 const StyledButton = styled.button`

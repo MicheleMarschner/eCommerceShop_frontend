@@ -19,8 +19,19 @@ const ColumnsWrapper = styled.div`
     gap: 2.3rem;
     margin: 2.3rem 0;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
       grid-template-columns: 1.2fr .8fr;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1799px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    @media (min-width: 1800px) {
+      grid-template-columns: .8fr 1.2fr;
+      gap: 10rem;
+      margin: 2.3rem 6rem;
     }
 ` 
 const WhiteBox = styled.div`

@@ -16,8 +16,18 @@ const ColumnsWrapper = styled.div`
     gap: 2.3rem;
     margin-top: 2.3rem;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
+        margin: 3rem;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1799px){
         grid-template-columns: 1.2fr .8fr;
+    }
+
+    @media (min-width: 1800px) {
+      grid-template-columns: 1.2fr .8fr;
+      gap: 5rem;
+      margin: 2.3rem 6rem;
     }
 ` 
 
@@ -46,7 +56,7 @@ const ProductImageBox = styled.div`
         max-height: 3.75rem;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: 768px) {
         padding: 10px;
         width: 6.25rem;
         height: 6.25rem;
@@ -62,7 +72,8 @@ const QuantityLabel = styled.span`
     padding: 0 3px;
     display: block;
     padding-left: 15px;
-    @media screen and (min-width: 768px) {
+
+    @media (min-width: 768px) {
         display: inline-block; 
         min-width: 35px; 
         padding: 0;
