@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import ProductBox from './ProductBox'
+import axios from 'axios'
 
 const StyledProductsGrid = styled.div`
   display: grid;
@@ -11,7 +12,16 @@ const StyledProductsGrid = styled.div`
   }
 `
 
-function ProductsGrid({products}) {
+function ProductsGrid({category}) {
+  const [ products, setProducts ] = useState([])
+
+  useEffect(() => {
+    axios.get(`/api/products?category=${category}`, 
+      { next: { revalidate: 1*360*24}}
+    )
+    .then(res => setProducts(res.data));
+  }, [category])
+
   return (
     <>
       <StyledProductsGrid>

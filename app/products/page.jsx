@@ -22,18 +22,17 @@ const FilterRow = styled.div`
 `
 
 function ProductsPage() {
-  const [ products, setProducts ] = useState([])
   
   const searchParams = useSearchParams();
   let category = searchParams.get('category');
   const router = useRouter();
 
-  useEffect(() => {
+ /* useEffect(() => {
     axios.get(`/api/products?category=${category}`, 
       { next: { revalidate: 1*360*24}}
     )
     .then(res => setProducts(res.data));
-  }, [category])
+  }, [category])*/
 
   const goBack = () => {
     router.push('/products')
@@ -56,7 +55,7 @@ function ProductsPage() {
           </StyledButton>
         </FilterRow>
         <Suspense fallback={<Loader />}>
-        <ProductsGrid products={products}/>
+        <ProductsGrid category={category}/>
         </Suspense>
       </Center>
     </>
