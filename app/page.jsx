@@ -1,6 +1,6 @@
 // mark as client component
 "use client";
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import Header from "./components/Header";
 import Featured from "./components/Featured";
 import axios from 'axios';
@@ -24,8 +24,13 @@ export default function Home() {
     <main>
       <Header />
       <Featured />
+      <Suspense fallback={<div>Loading</div>}>
       <NewProducts />
+      </Suspense>
+      <Suspense fallback={<div>Loading</div>}>
+      
       <Categories />
+      </Suspense>
     </main>
   );
 }

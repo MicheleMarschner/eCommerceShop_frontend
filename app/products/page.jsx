@@ -54,8 +54,8 @@ function ProductsPage() {
             Reset Filter
           </StyledButton>
         </FilterRow>
-        <Suspense fallback={<Loader />}>
-        <ProductsGrid category={category}/>
+        <Suspense fallback={<div>Loading</div>}>
+          <ProductsGrid category={category}/>
         </Suspense>
       </Center>
     </>
