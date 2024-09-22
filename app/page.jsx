@@ -24,13 +24,12 @@ export default function Home() {
     <main>
       <Header />
       <Featured />
-      <Suspense fallback={<div>Loading</div>}>
+      
       <NewProducts />
-      </Suspense>
-      <Suspense fallback={<div>Loading</div>}>
+      
       
       <Categories />
-      </Suspense>
+      
     </main>
   );
 }

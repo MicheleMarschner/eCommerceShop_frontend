@@ -22,9 +22,15 @@ const FilterRow = styled.div`
 `
 
 function ProductsPage() {
+  let category;
+
   
-  const searchParams = useSearchParams();
-  let category = searchParams.get('category');
+    const searchParams = useSearchParams();
+    category = searchParams.get('category');
+
+  
+  
+  
   const router = useRouter();
 
  /* useEffect(() => {
@@ -40,6 +46,8 @@ function ProductsPage() {
 
   return (
     <>
+      
+      
       <Header />
       <Center>
         <Title>Products</Title>
