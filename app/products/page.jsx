@@ -44,7 +44,6 @@ function ProductsPage() {
       <Header />
       <Center>
         <Title>Products</Title>
-        <Suspense fallback={<Loader />}>
         
         <FilterRow>
           <StyledButton 
@@ -56,6 +55,7 @@ function ProductsPage() {
             Reset Filter
           </StyledButton>
         </FilterRow>
+        <Suspense fallback={<Loader />}>
         <ProductsGrid products={products}/>
         </Suspense>
       </Center>
