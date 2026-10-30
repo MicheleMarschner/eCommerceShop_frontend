@@ -4,7 +4,7 @@ A Next.js e-commerce application for electronics, featuring a product catalog, p
 
 **[Live Demo](https://e-commerce-shop-frontend-six.vercel.app/)**
 
-![E-Commerce Shop](images/shop-home.png)
+![E-Commerce Shop](shop-home.png)
 
 ## Features
 
