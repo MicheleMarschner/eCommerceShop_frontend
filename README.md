@@ -1,16 +1,20 @@
-# E-Commerce - Shop  
-**Online electronics storefront with integrated payments and real-time order tracking.**  
+# E-Commerce Shop
 
-A simple e-commerce application for selling electronic products. Users can browse items, add them to a cart, and securely complete checkout via Stripe. Order fulfillment is automated via webhooks for a seamless customer experience.
+A Next.js e-commerce application for electronics, featuring a product catalog, persistent shopping cart, Stripe checkout, and webhook-based payment processing.
 
-[![Live Site](https://img.shields.io/badge/live-e--commerce--shop--frontend--six.vercel.app-blue)](https://e-commerce-shop-frontend-six.vercel.app)
+**[Live Demo](https://e-commerce-shop-frontend-six.vercel.app/)**
+
+![E-Commerce Shop](images/shop-home.png)
 
 ## Features
-- Intuitive product catalog, shopping cart, and Stripe-powered checkout flow  
-- Webhook integration to link successful payments to order records  
-- Persistent cart and user session using localStorage  
-- Faker-based script to seed product database for quick setup  
-- Responsive UI designed for smooth mobile and desktop experiences
+
+- Product catalog with responsive layouts
+- Persistent shopping cart using localStorage
+- Stripe Checkout for payments
+- Stripe webhooks for linking successful payments to order records
+- MongoDB and Mongoose for product and order data
+- Faker.js script for generating sample products
+- Styled-components for UI styling
 
 ## Technical Features
 - Product data managed with MongoDB using pre-defined Mongoose models  
